@@ -59,8 +59,8 @@ class ViewController: UIViewController {
             
             self.present(alert, animated: true, completion: nil)
         } else {
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            self.present(loginVC, animated: false, completion: nil)
+            let MenuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+            self.present(MenuVC, animated: false, completion: nil)
         }
         //color
         if let splashColor = color {
@@ -69,6 +69,12 @@ class ViewController: UIViewController {
             print("splash color is nil")
         }
         
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return .lightContent
+        }
     }
     
     

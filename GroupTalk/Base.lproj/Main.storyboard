@@ -23,6 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="618" y="27"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="zCe-Te-Dqr">
@@ -84,33 +85,18 @@
                                     <action selector="tapSignInAction:" destination="aJu-R9-ods" eventType="touchUpInside" id="SNJ-J9-hIY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qt8-cU-zbp">
-                                <rect key="frame" x="0.0" y="437" width="375" height="30"/>
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2Pv-8C-ls1"/>
-                                </constraints>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="tapSignUpAction" destination="aJu-R9-ods" eventType="touchUpInside" id="et0-of-BXH"/>
-                                    <segue destination="jc3-JQ-Da7" kind="show" id="Lsi-ry-Ejw"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ktD-gx-aLe" firstAttribute="leading" secondItem="ndA-Id-0OM" secondAttribute="leading" id="14O-Wi-ZoC"/>
                             <constraint firstItem="ktD-gx-aLe" firstAttribute="top" secondItem="0vo-da-FzI" secondAttribute="bottom" constant="43" id="1Iz-Is-oMl"/>
                             <constraint firstItem="FR3-5v-ZGk" firstAttribute="leading" secondItem="ndA-Id-0OM" secondAttribute="leading" id="3cQ-PI-26E"/>
-                            <constraint firstItem="qt8-cU-zbp" firstAttribute="leading" secondItem="ndA-Id-0OM" secondAttribute="leading" id="BNR-5i-ufU"/>
                             <constraint firstItem="ndA-Id-0OM" firstAttribute="trailing" secondItem="FR3-5v-ZGk" secondAttribute="trailing" id="C6C-e6-afB"/>
                             <constraint firstItem="0vo-da-FzI" firstAttribute="centerX" secondItem="ENl-9c-W9j" secondAttribute="centerX" id="H5K-Zu-eao"/>
                             <constraint firstItem="FR3-5v-ZGk" firstAttribute="top" secondItem="ktD-gx-aLe" secondAttribute="bottom" constant="8" id="He6-Vi-yZJ"/>
-                            <constraint firstItem="ndA-Id-0OM" firstAttribute="trailing" secondItem="qt8-cU-zbp" secondAttribute="trailing" id="L6L-NV-U2N"/>
                             <constraint firstItem="ndA-Id-0OM" firstAttribute="trailing" secondItem="ktD-gx-aLe" secondAttribute="trailing" id="Qpt-SL-aPb"/>
                             <constraint firstItem="3b8-Vr-99n" firstAttribute="leading" secondItem="ndA-Id-0OM" secondAttribute="leading" id="VdF-IJ-m1P"/>
                             <constraint firstItem="0vo-da-FzI" firstAttribute="top" secondItem="ndA-Id-0OM" secondAttribute="top" constant="140" id="WHC-YX-xbT"/>
-                            <constraint firstItem="qt8-cU-zbp" firstAttribute="top" secondItem="3b8-Vr-99n" secondAttribute="bottom" constant="8" id="XDK-pC-6Wk"/>
                             <constraint firstItem="ndA-Id-0OM" firstAttribute="trailing" secondItem="3b8-Vr-99n" secondAttribute="trailing" id="bgI-sc-hTS"/>
                             <constraint firstItem="3b8-Vr-99n" firstAttribute="top" secondItem="FR3-5v-ZGk" secondAttribute="bottom" constant="8" id="gbp-tN-HVs"/>
                         </constraints>
@@ -118,12 +104,52 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="3b8-Vr-99n" id="MFK-Su-xOu"/>
-                        <outlet property="signUpButton" destination="qt8-cU-zbp" id="LHA-uA-cXV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNF-Qx-pVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="131"/>
+            <point key="canvasLocation" x="2225" y="-220"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="fQU-DX-5F7">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="0hm-AR-Lsf" customClass="MenuViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQk-au-xh0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconfinder_weechat_1783353" translatesAutoresizingMaskIntoConstraints="NO" id="xzT-Sg-DTy">
+                                <rect key="frame" x="144" y="140" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x26-1U-sXp">
+                                <rect key="frame" x="160" y="468" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="jc3-JQ-Da7" kind="show" id="DMQ-PO-4Uc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="om5-aO-cjY">
+                                <rect key="frame" x="166" y="403" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <segue destination="aJu-R9-ods" kind="show" id="GFP-CW-QgK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="osO-7W-D0Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="om5-aO-cjY" id="zyD-Lh-4xk"/>
+                        <outlet property="signUpButton" destination="x26-1U-sXp" id="DsG-V0-45z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4r-N0-dbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1350" y="27"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Wyd-Hc-tLd">
@@ -212,7 +238,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Jff-jH-kS1" firstAttribute="top" secondItem="Z05-GV-qUS" secondAttribute="top" constant="157" id="048-eG-VM1"/>
@@ -254,7 +280,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2266" y="433"/>
+            <point key="canvasLocation" x="2225" y="458"/>
         </scene>
     </scenes>
     <resources>
