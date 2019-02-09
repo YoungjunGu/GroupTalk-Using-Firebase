@@ -93,6 +93,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="tapSignUpAction" destination="aJu-R9-ods" eventType="touchUpInside" id="et0-of-BXH"/>
+                                    <segue destination="jc3-JQ-Da7" kind="show" id="Lsi-ry-Ejw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -188,7 +189,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6gt-yt-era"/>
                                 </constraints>
-                                <state key="normal" title="회원가입"/>
+                                <state key="normal" title="Continue"/>
                                 <connections>
                                     <action selector="signUpAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="U40-Ig-Q0B"/>
                                 </connections>
@@ -198,7 +199,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eBP-Fc-I7M"/>
                                 </constraints>
-                                <state key="normal" title="취소"/>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="iC4-2O-daw"/>
                                 </connections>
@@ -253,7 +254,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1422" y="855"/>
+            <point key="canvasLocation" x="2266" y="433"/>
         </scene>
     </scenes>
     <resources>

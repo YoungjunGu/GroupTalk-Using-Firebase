@@ -14,7 +14,6 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
-    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
     
@@ -32,6 +31,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     let remoteConfig = RemoteConfig.remoteConfig()
     var colorString: String! = nil
     var ref: DatabaseReference!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         }
         colorString = remoteConfig["splash_background"].stringValue
         statusBar.backgroundColor = UIColor(hex: colorString)
-        signUpButton.backgroundColor = UIColor(hex: colorString)
+       // signUpButton.backgroundColor = UIColor(hex: colorString)
         cancelButton.backgroundColor = UIColor(hex: colorString)
     }
     
@@ -88,53 +88,10 @@ extension SignUpViewController {
     
     func signUp(email: String, password: String, name: String) {
         
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            if error != nil {
-                
-                if let ErrorCode = AuthErrorCode(rawValue: (error?._code)!) {
-                    
-                    switch ErrorCode {
-                        
-                    case AuthErrorCode.invalidEmail:
-                        self.showAlert(message: "유효하지 않은 이메일 입니다.")
-                    case AuthErrorCode.emailAlreadyInUse:
-                        self.showAlert(message: "이미 가입한 회원 입니다.")
-                    case AuthErrorCode.weakPassword:
-                        self.showAlert(message: "비밀번호는 최소 6자리 이상 입니다.")
-                    default:
-                        print(ErrorCode)
-                    }
-                }
-            } else {
-                print("회원가입 성공")
-                dump(user)
-                //Firebase 서버에 데이터를 저장 하는 작업
-                let userID = Auth.auth().currentUser?.uid
-                let profileImage = self.profileImageView.image?.jpegData(compressionQuality: 0.1)
-                
-                Storage.storage().reference().child("userImages").child(userID!).putData(profileImage!, metadata: nil, completion: {
-                    (data, error) in
-                
-                    if let error = error {
-                        print("There was an error")
-                        print(error.localizedDescription)
-                        return
-                    } else {
-                        Storage.storage().reference().downloadURL(completion: { (url, error) in
-                            if error != nil {
-                                print(error!.localizedDescription)
-                                return
-                            }
-                            let imageUrl = url?.absoluteString
-                            Database.database().reference().child("users").child(userID!).setValue(["name": name, "profileImageUrl": imageUrl ])
-                        })
-                    }
-                })
-                
-                self.dismiss(animated: true, completion: nil)
-            }
-        })
+        
     }
+    
+    
     
     func profileImagePicker() {
         
