@@ -10,8 +10,6 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
 
@@ -19,16 +17,10 @@ class LoginViewController: UIViewController {
     let remoteConfig = RemoteConfig.remoteConfig()
     var colorString: String! = nil
     
-    @IBAction func tapSignInAction(_ sender: Any) {
-        signInEvent()
-    }
-    
-    @IBAction func tapSignUpAction() {
-        signUpPresent()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         setUpLayout()
         
         //현재 유저가 로그인 중 인지 확인 하는 작업
@@ -49,25 +41,6 @@ extension LoginViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    fileprivate func signInEvent() {
-  
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: pwdTextField.text!) { (user, error) in
-            if user != nil{
-                print("login success")
-                self.signInButton.isHidden = true
-            }
-            else{
-                print("login fail")
-            }
-        }
-    
-    }
-    
-    fileprivate func signUpPresent() {
-        
-        let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController") as! SignUpViewController
-        self.present(signUpVC, animated: true, completion: nil)
-    }
     
     fileprivate func setUpLayout() {
         
@@ -80,7 +53,5 @@ extension LoginViewController {
         colorString = remoteConfig["splash_background"].stringValue
         
         stateBar.backgroundColor = UIColor(named: colorString)
-        signInButton.backgroundColor = UIColor(hex: colorString)
-        signInButton.backgroundColor = UIColor(hex: colorString)
     }
 }

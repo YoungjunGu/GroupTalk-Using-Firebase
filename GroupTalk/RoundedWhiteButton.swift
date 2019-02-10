@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class RoundedWhiteButton: UIButton {
-    
+
+
+@IBDesignable class RoundedWhiteButton: UIButton {
     
     var highlightedColor = UIColor.white {
         didSet {
@@ -38,26 +39,18 @@ class RoundedWhiteButton: UIButton {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setup()
-    }
-    
     func setup() {
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 2.0
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
     }
+    
+    @IBInspectable var rounded: Bool = false {
+        didSet {
+            setup()
+        }
+    }
+
 }
 

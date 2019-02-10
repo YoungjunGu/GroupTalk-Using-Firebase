@@ -14,8 +14,11 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
-    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var cancelButton: RoundedWhiteButton!
+    @IBOutlet weak var continueButton: RoundedWhiteButton!
+    
+    var activityView: UIActivityIndicatorView!
     
     @IBAction func touchUpProfileAdding(_ sender: UITapGestureRecognizer) {
         profileImagePicker()
@@ -35,6 +38,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         self.ref = Database.database().reference()
         
         
@@ -51,8 +55,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         }
         colorString = remoteConfig["splash_background"].stringValue
         statusBar.backgroundColor = UIColor(hex: colorString)
-       // signUpButton.backgroundColor = UIColor(hex: colorString)
-        cancelButton.backgroundColor = UIColor(hex: colorString)
+        // signUpButton.backgroundColor = UIColor(hex: colorString)
     }
     
 }
@@ -86,11 +89,31 @@ extension SignUpViewController {
         signUp(email: emailTextField.text!, password: pwdTextField.text!, name: nameTextField.text!)
     }
     
-    func signUp(email: String, password: String, name: String) {
-        
-        
+    func setContinueButton(enable: Bool) {
+        if enable {
+            continueButton.alpha = 1.0
+            continueButton.isEnabled = true
+        } else {
+            continueButton.alpha = 0.5
+            continueButton.isEnabled = false
+        }
     }
     
+    func signUp(email: String, password: String, name: String) {
+        
+        setContinueButton(enable: false)
+        continueButton.setTitle("", for: .normal)
+        activityView.startAnimating()
+        
+        Auth.auth().createUser(withEmail: email, password: password) { user, error in
+            if error == nil && user != nil {
+                print("Urser Created")
+                
+                
+            }
+        }
+        
+    }
     
     
     func profileImagePicker() {
@@ -113,6 +136,16 @@ extension SignUpViewController {
             self.profileImageView.image = changedImage //편집된 사진을 뷰에 present
         }
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadProfileImage(_ image: UIImage, completion: @escaping ((_ url: URL?) -> ())) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        
+        let metaData = StorageMetadata()
     }
     
     
