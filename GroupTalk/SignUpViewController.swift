@@ -109,7 +109,35 @@ extension SignUpViewController {
             if error == nil && user != nil {
                 print("Urser Created")
                 
-                
+                self.uploadProfileImage(self.profileImageView.image!) { url in
+                    
+                    if url != nil {
+                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                        changeRequest?.displayName = name
+                        changeRequest?.photoURL = url
+                        
+                        changeRequest?.commitChanges { error in
+                            if error == nil {
+                                print("유저이름 변경")
+                                
+                                self.saveProfileImage(userName: name, profileImageURL: url!) { success in
+                                    if success {
+                                        self.dismiss(animated: true, completion: nil)
+                                    } else {
+                                        self.showAlert(message: "회원 가입 실패")
+                                    }
+                                }
+                                
+                            } else {
+                                self.showAlert(message: "회원 가입 실패")
+                            }
+                        }
+                    } else {
+                        self.showAlert(message: "회원 가입 실패")
+                    }
+                }
+            } else {
+                self.showAlert(message: "회원 가입 실패")
             }
         }
         
@@ -146,6 +174,33 @@ extension SignUpViewController {
         guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
         
         let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                storageRef.downloadURL { url, error in
+                    if error != nil {
+                        completion(nil)
+                    } else {
+                        completion(url)
+                    }
+                }
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    func saveProfileImage(userName: String, profileImageURL: URL, completion: @escaping ((_ success: Bool)->())) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database().reference().child("users/profile/\(uid)")
+        
+        let userObject = ["userName": userName, "photoURL": profileImageURL.absoluteString] as [String: Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            completion(error == nil)
+        }
     }
     
     
