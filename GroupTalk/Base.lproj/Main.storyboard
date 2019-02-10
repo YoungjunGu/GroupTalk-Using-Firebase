@@ -80,9 +80,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signUpAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="DDu-xb-AdU"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adh-HO-Apv" customClass="RoundedWhiteButton" customModule="GroupTalk" customModuleProvider="target">
                                 <rect key="frame" x="37.666666666666657" y="772" width="339" height="50"/>
@@ -95,9 +92,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="cancelAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="58s-3V-Z18"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -271,7 +265,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="cancelAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="9GF-BM-M7v"/>
+                                    <action selector="cancelAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="n9X-J2-ZVF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0o-Yo-I6G" customClass="RoundedWhiteButton" customModule="GroupTalk" customModuleProvider="target">
@@ -286,11 +280,12 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signUpAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="6aR-lk-w0N"/>
+                                    <action selector="signUpAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="kDF-6k-5yD"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="스크린샷 2019-02-02 오전 10.01.45" translatesAutoresizingMaskIntoConstraints="NO" id="GMM-MD-QSD">
                                 <rect key="frame" x="157" y="367" width="100" height="100"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="KhA-4p-YkE"/>
                                     <constraint firstAttribute="height" constant="100" id="ZqV-Wk-Wgc"/>
@@ -317,9 +312,6 @@
                             <constraint firstItem="Z05-GV-qUS" firstAttribute="bottom" secondItem="T75-ma-v4V" secondAttribute="bottom" constant="44" id="vgh-fH-cW6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z05-GV-qUS"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Fgz-nw-IXF" appends="YES" id="lMb-Dk-3GJ"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="T75-ma-v4V" id="wnK-cg-U0T"/>
@@ -331,11 +323,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCJ-RZ-uwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Fgz-nw-IXF">
-                    <connections>
-                        <action selector="touchUpProfileAdding:" destination="jc3-JQ-Da7" id="zCC-dv-7np"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2225" y="458"/>
         </scene>

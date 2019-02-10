@@ -20,13 +20,10 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var activityView: UIActivityIndicatorView!
     
-    @IBAction func touchUpProfileAdding(_ sender: UITapGestureRecognizer) {
-        profileImagePicker()
-    }
-    
     @IBAction func signUpAction(_ sender: Any) {
         doSignUp()
     }
+    
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -41,9 +38,14 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         self.ref = Database.database().reference()
         
-        
+        tapProfileImage()
         setUpLayout()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     fileprivate func setUpLayout() {
@@ -103,7 +105,7 @@ extension SignUpViewController {
         
         setContinueButton(enable: false)
         continueButton.setTitle("", for: .normal)
-        activityView.startAnimating()
+        //activityView.startAnimating()
         
         Auth.auth().createUser(withEmail: email, password: password) { user, error in
             if error == nil && user != nil {
@@ -119,41 +121,31 @@ extension SignUpViewController {
                         changeRequest?.commitChanges { error in
                             if error == nil {
                                 print("유저이름 변경")
-                                
                                 self.saveProfileImage(userName: name, profileImageURL: url!) { success in
                                     if success {
+                                        print("회원가입 성공")
                                         self.dismiss(animated: true, completion: nil)
                                     } else {
-                                        self.showAlert(message: "회원 가입 실패")
+                                        self.showAlert(message: "회원 가입 실패1")
                                     }
                                 }
                                 
                             } else {
-                                self.showAlert(message: "회원 가입 실패")
+                                print("Error: \(error!.localizedDescription)")
+                                self.showAlert(message: "회원 가입 실패2")
                             }
                         }
                     } else {
-                        self.showAlert(message: "회원 가입 실패")
+                        self.showAlert(message: "회원 가입 실패3")
                     }
                 }
             } else {
-                self.showAlert(message: "회원 가입 실패")
+                self.showAlert(message: "회원 가입 실패4")
             }
         }
         
     }
     
-    
-    func profileImagePicker() {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        //선택한 사진을 수정 할 수 있는 여부를 정하는 값
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
-        
-        self.present(imagePicker, animated: true, completion: nil)
-    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
@@ -190,6 +182,29 @@ extension SignUpViewController {
             }
         }
     }
+    
+    func tapProfileImage() {
+        
+        var tapGesture = UITapGestureRecognizer()
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.profileImagePicker))
+        tapGesture.numberOfTapsRequired = 1 //한번 탭 에 열림
+        self.profileImageView.addGestureRecognizer(tapGesture)
+        self.profileImageView.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func profileImagePicker() {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        //선택한 사진을 수정 할 수 있는 여부를 정하는 값
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
     
     func saveProfileImage(userName: String, profileImageURL: URL, completion: @escaping ((_ success: Bool)->())) {
         
