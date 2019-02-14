@@ -103,15 +103,15 @@ extension SignUpViewController {
     
     func signUp(email: String, password: String, name: String) {
         
-        setContinueButton(enable: false)
-        continueButton.setTitle("", for: .normal)
+
         //activityView.startAnimating()
+        guard let image = profileImageView.image else { return }
         
-        Auth.auth().createUser(withEmail: email, password: password) { user, error in
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if error == nil && user != nil {
                 print("Urser Created")
                 
-                self.uploadProfileImage(self.profileImageView.image!) { url in
+                self.uploadProfileImage(image) { url in
                     
                     if url != nil {
                         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
@@ -123,6 +123,8 @@ extension SignUpViewController {
                                 print("유저이름 변경")
                                 self.saveProfileImage(userName: name, profileImageURL: url!) { success in
                                     if success {
+                                        self.setContinueButton(enable: false)
+                                        self.continueButton.setTitle("", for: .normal)
                                         print("회원가입 성공")
                                         self.dismiss(animated: true, completion: nil)
                                     } else {
@@ -167,10 +169,10 @@ extension SignUpViewController {
         
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
-        
-        storageRef.putData(imageData, metadata: metaData) { metaData, error in
-            if error == nil, metaData != nil {
-                storageRef.downloadURL { url, error in
+        print("uploadfileImage진입")
+        storageRef.putData(imageData, metadata: nil , completion: { (metaData, error) in
+            if error == nil {
+                storageRef.downloadURL { (url, error) in
                     if error != nil {
                         completion(nil)
                     } else {
@@ -178,9 +180,11 @@ extension SignUpViewController {
                     }
                 }
             } else {
+                print(error?.localizedDescription as Any)
+                print("이미지 업로드 실패")
                 completion(nil)
             }
-        }
+        })
     }
     
     func tapProfileImage() {

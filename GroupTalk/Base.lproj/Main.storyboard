@@ -163,10 +163,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Talk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bG2-SI-8Fl">
-                                <rect key="frame" x="151" y="330" width="112" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="DIw-eh-nqq"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="326" width="414" height="27.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -174,13 +171,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bG2-SI-8Fl" firstAttribute="top" secondItem="vdk-vc-Yci" secondAttribute="bottom" constant="26" id="Fwg-YB-qYS"/>
-                            <constraint firstItem="bG2-SI-8Fl" firstAttribute="centerX" secondItem="FQk-au-xh0" secondAttribute="centerX" id="Jnc-Mp-N1J"/>
                             <constraint firstItem="wNa-LW-aRj" firstAttribute="centerX" secondItem="FQk-au-xh0" secondAttribute="centerX" id="LXT-RP-Bes"/>
                             <constraint firstItem="YHt-DE-KUM" firstAttribute="centerX" secondItem="FQk-au-xh0" secondAttribute="centerX" id="NBZ-xn-8dK"/>
-                            <constraint firstItem="bG2-SI-8Fl" firstAttribute="leading" secondItem="osO-7W-D0Q" secondAttribute="leading" constant="151" id="bhz-jv-so9"/>
+                            <constraint firstItem="bG2-SI-8Fl" firstAttribute="centerX" secondItem="FQk-au-xh0" secondAttribute="centerX" id="WzZ-fV-vyM"/>
+                            <constraint firstItem="bG2-SI-8Fl" firstAttribute="top" secondItem="vdk-vc-Yci" secondAttribute="bottom" constant="22" id="aUg-ej-bVa"/>
                             <constraint firstItem="vdk-vc-Yci" firstAttribute="centerX" secondItem="FQk-au-xh0" secondAttribute="centerX" id="gto-Nl-UIv"/>
+                            <constraint firstItem="bG2-SI-8Fl" firstAttribute="leading" secondItem="osO-7W-D0Q" secondAttribute="leading" id="hen-p1-99D"/>
                             <constraint firstItem="osO-7W-D0Q" firstAttribute="bottom" secondItem="YHt-DE-KUM" secondAttribute="bottom" constant="49" id="jAS-jl-NBq"/>
+                            <constraint firstItem="osO-7W-D0Q" firstAttribute="trailing" secondItem="bG2-SI-8Fl" secondAttribute="trailing" id="pwT-LH-Rgs"/>
                             <constraint firstItem="YHt-DE-KUM" firstAttribute="top" secondItem="wNa-LW-aRj" secondAttribute="bottom" constant="18" id="qwk-Rv-du4"/>
                             <constraint firstItem="vdk-vc-Yci" firstAttribute="top" secondItem="osO-7W-D0Q" secondAttribute="top" constant="160" id="viP-Xc-qzn"/>
                         </constraints>
