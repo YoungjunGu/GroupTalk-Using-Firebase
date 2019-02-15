@@ -39,25 +39,13 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         self.ref = Database.database().reference()
         
         tapProfileImage()
-        setUpLayout()
+
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-    }
-    
-    fileprivate func setUpLayout() {
-        let statusBar = UIView()
-        self.view.addSubview(statusBar)
-        statusBar.snp.makeConstraints{ (m) in
-            m.right.top.left.equalTo(self.view)
-            m.height.equalTo(20)
-        }
-        colorString = remoteConfig["splash_background"].stringValue
-        statusBar.backgroundColor = UIColor(hex: colorString)
-        // signUpButton.backgroundColor = UIColor(hex: colorString)
     }
     
 }

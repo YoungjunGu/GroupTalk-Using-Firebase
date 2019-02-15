@@ -80,6 +80,10 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapSignInButton:" destination="aJu-R9-ods" eventType="touchUpInside" id="Rq1-Nq-lr9"/>
+                                    <segue destination="fWq-zR-fBY" kind="show" id="ZSR-SV-Hm0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adh-HO-Apv" customClass="RoundedWhiteButton" customModule="GroupTalk" customModuleProvider="target">
                                 <rect key="frame" x="37.666666666666657" y="772" width="339" height="50"/>
@@ -92,6 +96,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapCancelButton:" destination="aJu-R9-ods" eventType="touchUpInside" id="naF-3f-lsT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,10 +117,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ndA-Id-0OM"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="Adh-HO-Apv" id="rwH-G6-hKC"/>
+                        <outlet property="emailTextField" destination="ktD-gx-aLe" id="0xS-Nj-efS"/>
+                        <outlet property="pwdTextField" destination="FR3-5v-ZGk" id="e9q-hn-IGC"/>
+                        <outlet property="signInButton" destination="Ldy-0j-GAv" id="A7S-Sc-lBt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNF-Qx-pVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224.8000000000002" y="-220.83958020989508"/>
+            <point key="canvasLocation" x="3090" y="-325"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="QDp-wK-x2l">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="Dqx-A9-Ybs" customClass="HomeViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRr-pp-frQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Fd2-I4-WVj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="hvZ-aw-MHb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rP-cL-in4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5184.057971014493" y="-325.44642857142856"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="fQU-DX-5F7">
@@ -178,7 +207,7 @@
                             <constraint firstItem="vdk-vc-Yci" firstAttribute="centerX" secondItem="FQk-au-xh0" secondAttribute="centerX" id="gto-Nl-UIv"/>
                             <constraint firstItem="bG2-SI-8Fl" firstAttribute="leading" secondItem="osO-7W-D0Q" secondAttribute="leading" id="hen-p1-99D"/>
                             <constraint firstItem="osO-7W-D0Q" firstAttribute="bottom" secondItem="YHt-DE-KUM" secondAttribute="bottom" constant="49" id="jAS-jl-NBq"/>
-                            <constraint firstItem="osO-7W-D0Q" firstAttribute="trailing" secondItem="bG2-SI-8Fl" secondAttribute="trailing" id="pwT-LH-Rgs"/>
+                            <constraint firstItem="osO-7W-D0Q" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bG2-SI-8Fl" secondAttribute="trailing" id="pwT-LH-Rgs"/>
                             <constraint firstItem="YHt-DE-KUM" firstAttribute="top" secondItem="wNa-LW-aRj" secondAttribute="bottom" constant="18" id="qwk-Rv-du4"/>
                             <constraint firstItem="vdk-vc-Yci" firstAttribute="top" secondItem="osO-7W-D0Q" secondAttribute="top" constant="160" id="viP-Xc-qzn"/>
                         </constraints>
@@ -269,6 +298,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0o-Yo-I6G" customClass="RoundedWhiteButton" customModule="GroupTalk" customModuleProvider="target">
                                 <rect key="frame" x="57" y="700" width="300" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gaB-bU-jQF"/>
                                     <constraint firstAttribute="height" constant="50" id="v2c-F9-dLA"/>
                                 </constraints>
                                 <state key="normal" title="Continue">
@@ -279,6 +309,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="kDF-6k-5yD"/>
+                                    <segue destination="aJu-R9-ods" kind="show" id="qeX-ja-kZm"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="스크린샷 2019-02-02 오전 10.01.45" translatesAutoresizingMaskIntoConstraints="NO" id="GMM-MD-QSD">
@@ -322,11 +353,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCJ-RZ-uwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2225" y="458"/>
+            <point key="canvasLocation" x="2214" y="315"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="7rK-70-hGz">
+            <objects>
+                <tabBarController storyboardIdentifier="HomeViewTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="fWq-zR-fBY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0WV-L2-tyM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Dqx-A9-Ybs" kind="relationship" relationship="viewControllers" id="Jd4-S5-R7L"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flm-WV-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4273.913043478261" y="-325.44642857142856"/>
         </scene>
     </scenes>
     <resources>
         <image name="iconfinder_weechat_1783353" width="256" height="256"/>
         <image name="스크린샷 2019-02-02 오전 10.01.45" width="302" height="306"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qeX-ja-kZm"/>
+    </inferredMetricsTieBreakers>
 </document>

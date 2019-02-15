@@ -12,14 +12,27 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
-
+    @IBOutlet weak var signInButton: RoundedWhiteButton!
+    @IBOutlet weak var cancelButton: RoundedWhiteButton!
+    
     //firebase의 내용을 원격으로 가져옴
     let remoteConfig = RemoteConfig.remoteConfig()
     var colorString: String! = nil
     
+    @IBAction func tapSignInButton(_ sender: Any) {
+        handleSignIn()
+    }
+    
+    @IBAction func tapCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        try! Auth.auth().signOut()
+
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         setUpLayout()
         
@@ -28,9 +41,15 @@ class LoginViewController: UIViewController {
             showAlert(message: "이미 로그인 된 상태입니다.")
         }
         
+        Auth.auth().addStateDidChangeListener{ (auth, user) in
+            if user != nil {
+                let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                self.present(homeVC, animated: true, completion: nil)
+                
+            }
+        }
+        
     }
-    
-    
 
 }
 
@@ -55,5 +74,33 @@ extension LoginViewController {
         colorString = remoteConfig["splash_background"].stringValue
         
         stateBar.backgroundColor = UIColor(named: colorString)
+    }
+    
+    func setContinueButton(enabled:Bool) {
+        if enabled {
+            signInButton.alpha = 1.0
+            signInButton.isEnabled = true
+        } else {
+            signInButton.alpha = 0.5
+            signInButton.isEnabled = false
+        }
+    }
+    
+    func handleSignIn() {
+        guard let email = emailTextField.text else { return }
+        guard let pass = pwdTextField.text else { return }
+        
+        setContinueButton(enabled: false)
+        signInButton.setTitle("", for: .normal)
+        
+        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
+            if error == nil && user != nil {
+                print("로그인 성공")
+            } else {
+                print("Error logging in: \(error!.localizedDescription)")
+                
+                self.showAlert(message: "실패")
+            }
+        }
     }
 }

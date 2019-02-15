@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuViewController: UIViewController {
     
@@ -27,6 +28,8 @@ class MenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
         
     }
     
