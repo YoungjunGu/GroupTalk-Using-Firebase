@@ -5,9 +5,12 @@
 
 > Architecture Pattern
 
-- MVC 적용 
+- MVC 적용
 
+User정보를 가져올 Model 추가
+API Request를 위한 분리 작업 필요
 
-
+<br>
 
 > 뷰의 회전을 감지하고 layout 설정
+
