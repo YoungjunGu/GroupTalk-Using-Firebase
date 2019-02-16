@@ -128,21 +128,21 @@
             </objects>
             <point key="canvasLocation" x="3090" y="-325"/>
         </scene>
-        <!--Item-->
+        <!--Chat-->
         <scene sceneID="QDp-wK-x2l">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="Dqx-A9-Ybs" customClass="HomeViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dqx-A9-Ybs" customClass="HomeViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RRr-pp-frQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fd2-I4-WVj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hvZ-aw-MHb"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="ic_chat" selectedImage="ic_chat" id="hvZ-aw-MHb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rP-cL-in4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5184.057971014493" y="-325.44642857142856"/>
+            <point key="canvasLocation" x="6059" y="-433"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="fQU-DX-5F7">
@@ -366,14 +366,51 @@
                     </tabBar>
                     <connections>
                         <segue destination="Dqx-A9-Ybs" kind="relationship" relationship="viewControllers" id="Jd4-S5-R7L"/>
+                        <segue destination="lU8-Xe-uyb" kind="relationship" relationship="viewControllers" id="DfM-ud-ygy"/>
+                        <segue destination="wZr-BX-ril" kind="relationship" relationship="viewControllers" id="auE-DM-zlv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flm-WV-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4273.913043478261" y="-325.44642857142856"/>
         </scene>
+        <!--People-->
+        <scene sceneID="a8r-QK-GEA">
+            <objects>
+                <viewController id="wZr-BX-ril" customClass="PeopleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bxc-X5-uAT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="UM7-Y5-kCP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="People" image="ic_people" selectedImage="ic_people" id="LjM-SB-JJ2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9o-8Z-k9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6058" y="-1082"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="XnF-uW-9tv">
+            <objects>
+                <viewController id="lU8-Xe-uyb" customClass="HomeViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vwG-GM-Wbz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ywy-YD-p01"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="ic_account" selectedImage="ic_account" id="Vga-JL-LzI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNz-9Z-lUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6058" y="226"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ic_account" width="36" height="36"/>
+        <image name="ic_chat" width="36" height="36"/>
+        <image name="ic_people" width="36" height="36"/>
         <image name="iconfinder_weechat_1783353" width="256" height="256"/>
         <image name="스크린샷 2019-02-02 오전 10.01.45" width="302" height="306"/>
     </resources>

@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct User {
-    var email: String
-    var pwd: String
+class User: NSObject {
+    
+    var profileImageURL: String?
+    var userName: String?
     
 }
