@@ -35,11 +35,12 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         self.ref = Database.database().reference()
         
         tapProfileImage()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -91,7 +92,7 @@ extension SignUpViewController {
     
     func signUp(email: String, password: String, name: String) {
         
-
+        
         //activityView.startAnimating()
         guard let image = profileImageView.image else { return }
         
@@ -136,7 +137,6 @@ extension SignUpViewController {
         
     }
     
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -144,6 +144,7 @@ extension SignUpViewController {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let changedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.profileImageView.image = changedImage //편집된 사진을 뷰에 present
+            print("이미지 데이터 저장 완료")
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -151,14 +152,14 @@ extension SignUpViewController {
     func uploadProfileImage(_ image: UIImage, completion: @escaping ((_ url: URL?) -> ())) {
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        let storageRef = Storage.storage().reference().child("user/\(uid)").child("profileImage.jpg")
         
         guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
         
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
         print("uploadfileImage진입")
-        storageRef.putData(imageData, metadata: nil , completion: { (metaData, error) in
+        storageRef.putData(imageData, metadata: metaData) { (metaData, error) in
             if error == nil {
                 storageRef.downloadURL { (url, error) in
                     if error != nil {
@@ -172,7 +173,7 @@ extension SignUpViewController {
                 print("이미지 업로드 실패")
                 completion(nil)
             }
-        })
+        }
     }
     
     func tapProfileImage() {
@@ -187,12 +188,12 @@ extension SignUpViewController {
     }
     
     @objc func profileImagePicker() {
-        
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
         //선택한 사진을 수정 할 수 있는 여부를 정하는 값
+        imagePicker.delegate = self
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
+        
         
         self.present(imagePicker, animated: true, completion: nil)
     }
@@ -205,9 +206,11 @@ extension SignUpViewController {
         
         let userObject = ["userName": userName, "photoURL": profileImageURL.absoluteString] as [String: Any]
         
-        databaseRef.setValue(userObject) { error, ref in
-            completion(error == nil)
-        }
+        databaseRef.setValue(userObject, withCompletionBlock: { (error, ref) in
+            if error == nil {
+                print("RealDatabase 실패")
+            }
+        })
     }
     
     

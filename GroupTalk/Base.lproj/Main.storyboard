@@ -309,7 +309,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpAction:" destination="jc3-JQ-Da7" eventType="touchUpInside" id="kDF-6k-5yD"/>
-                                    <segue destination="aJu-R9-ods" kind="show" id="qeX-ja-kZm"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="스크린샷 2019-02-02 오전 10.01.45" translatesAutoresizingMaskIntoConstraints="NO" id="GMM-MD-QSD">
@@ -361,13 +360,14 @@
                 <tabBarController storyboardIdentifier="HomeViewTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="fWq-zR-fBY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0WV-L2-tyM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="wZr-BX-ril" kind="relationship" relationship="viewControllers" id="auE-DM-zlv"/>
                         <segue destination="Dqx-A9-Ybs" kind="relationship" relationship="viewControllers" id="Jd4-S5-R7L"/>
                         <segue destination="lU8-Xe-uyb" kind="relationship" relationship="viewControllers" id="DfM-ud-ygy"/>
-                        <segue destination="wZr-BX-ril" kind="relationship" relationship="viewControllers" id="auE-DM-zlv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flm-WV-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,7 +414,4 @@
         <image name="iconfinder_weechat_1783353" width="256" height="256"/>
         <image name="스크린샷 2019-02-02 오전 10.01.45" width="302" height="306"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="qeX-ja-kZm"/>
-    </inferredMetricsTieBreakers>
 </document>

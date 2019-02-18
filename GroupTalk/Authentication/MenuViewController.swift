@@ -19,7 +19,6 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
-        
     }
     
     override func didReceiveMemoryWarning() {

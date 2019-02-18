@@ -18,7 +18,6 @@
 		EF1DE97021EC13AE00AEF9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1DE96E21EC13AE00AEF9ED /* LaunchScreen.storyboard */; };
 		EF1DE97B21EC13AE00AEF9ED /* GroupTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DE97A21EC13AE00AEF9ED /* GroupTalkTests.swift */; };
 		EF1DE98621EC13AE00AEF9ED /* GroupTalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DE98521EC13AE00AEF9ED /* GroupTalkUITests.swift */; };
-		EF1EF2A1220F186300AAE66A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF1EF2A0220F186300AAE66A /* GoogleService-Info.plist */; };
 		EF1EF2A3220F1AA200AAE66A /* RoundedWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1EF2A2220F1AA200AAE66A /* RoundedWhiteButton.swift */; };
 		EF1EF2A5220F1F7400AAE66A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1EF2A4220F1F7400AAE66A /* MenuViewController.swift */; };
 		EF1EF2A7220F259000AAE66A /* FuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1EF2A6220F259000AAE66A /* FuncExtension.swift */; };
@@ -26,6 +25,7 @@
 		EF475A6A2216665A005BE788 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF475A692216665A005BE788 /* PeopleViewController.swift */; };
 		EF4CC7A2220D9D0800D41FB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */; };
 		EF4CC7A4220DA2AF00D41FB8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A3220DA2AF00D41FB8 /* Model.swift */; };
+		EFADEBAD221AA9AC00E223C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFADEBAC221AA9AC00E223C2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 		EF1DE98121EC13AE00AEF9ED /* GroupTalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupTalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DE98521EC13AE00AEF9ED /* GroupTalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTalkUITests.swift; sourceTree = "<group>"; };
 		EF1DE98721EC13AE00AEF9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF1EF2A0220F186300AAE66A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF1EF2A2220F1AA200AAE66A /* RoundedWhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedWhiteButton.swift; sourceTree = "<group>"; };
 		EF1EF2A4220F1F7400AAE66A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF1EF2A6220F259000AAE66A /* FuncExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncExtension.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		EF475A692216665A005BE788 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EF4CC7A3220DA2AF00D41FB8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EFADEBAC221AA9AC00E223C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,17 +155,13 @@
 		EF1DE96421EC13AC00AEF9ED /* GroupTalk */ = {
 			isa = PBXGroup;
 			children = (
+				EF475A6D2217DFA9005BE788 /* Extenstion */,
+				EF475A6B2217DF63005BE788 /* Authentication */,
 				EF1B1F9321FC8CB900C4F8B3 /* RemoteConfigDefaults.plist */,
-				EF1EF2A0220F186300AAE66A /* GoogleService-Info.plist */,
+				EFADEBAC221AA9AC00E223C2 /* GoogleService-Info.plist */,
 				EF1DE96521EC13AC00AEF9ED /* AppDelegate.swift */,
 				EF4CC7A3220DA2AF00D41FB8 /* Model.swift */,
-				EF1DE96721EC13AC00AEF9ED /* ViewController.swift */,
-				EF1EF2A4220F1F7400AAE66A /* MenuViewController.swift */,
 				EF475A692216665A005BE788 /* PeopleViewController.swift */,
-				EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */,
-				EF2144D221FD34FD00859DB3 /* SignUpViewController.swift */,
-				EF1EF2A2220F1AA200AAE66A /* RoundedWhiteButton.swift */,
-				EF1EF2A6220F259000AAE66A /* FuncExtension.swift */,
 				EF1DE96921EC13AC00AEF9ED /* Main.storyboard */,
 				EF1DE96C21EC13AE00AEF9ED /* Assets.xcassets */,
 				EF1DE96E21EC13AE00AEF9ED /* LaunchScreen.storyboard */,
@@ -190,6 +186,26 @@
 				EF1DE98721EC13AE00AEF9ED /* Info.plist */,
 			);
 			path = GroupTalkUITests;
+			sourceTree = "<group>";
+		};
+		EF475A6B2217DF63005BE788 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EF2144D221FD34FD00859DB3 /* SignUpViewController.swift */,
+				EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */,
+				EF1DE96721EC13AC00AEF9ED /* ViewController.swift */,
+				EF1EF2A4220F1F7400AAE66A /* MenuViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EF475A6D2217DFA9005BE788 /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				EF1EF2A2220F1AA200AAE66A /* RoundedWhiteButton.swift */,
+				EF1EF2A6220F259000AAE66A /* FuncExtension.swift */,
+			);
+			path = Extenstion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +318,7 @@
 			files = (
 				EF1DE97021EC13AE00AEF9ED /* LaunchScreen.storyboard in Resources */,
 				EF1B1F9421FC8CB900C4F8B3 /* RemoteConfigDefaults.plist in Resources */,
-				EF1EF2A1220F186300AAE66A /* GoogleService-Info.plist in Resources */,
+				EFADEBAD221AA9AC00E223C2 /* GoogleService-Info.plist in Resources */,
 				EF1DE96D21EC13AE00AEF9ED /* Assets.xcassets in Resources */,
 				EF1DE96B21EC13AC00AEF9ED /* Main.storyboard in Resources */,
 			);
