@@ -156,10 +156,11 @@ extension SignUpViewController {
         
         guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
         
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/jpg"
+        //이미지에 이름 추가하기
+        //let imageName = NSUUID().uuidString
+        
         print("uploadfileImage진입")
-        storageRef.putData(imageData, metadata: metaData) { (metaData, error) in
+        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
             if error == nil {
                 storageRef.downloadURL { (url, error) in
                     if error != nil {
@@ -208,7 +209,7 @@ extension SignUpViewController {
         
         databaseRef.setValue(userObject, withCompletionBlock: { (error, ref) in
             if error == nil {
-                print("RealDatabase 실패")
+                print("Realtime Database 추가 성공")
             }
         })
     }

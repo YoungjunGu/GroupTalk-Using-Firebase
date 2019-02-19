@@ -25,7 +25,7 @@
 		EF475A6A2216665A005BE788 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF475A692216665A005BE788 /* PeopleViewController.swift */; };
 		EF4CC7A2220D9D0800D41FB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */; };
 		EF4CC7A4220DA2AF00D41FB8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A3220DA2AF00D41FB8 /* Model.swift */; };
-		EFADEBAD221AA9AC00E223C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFADEBAC221AA9AC00E223C2 /* GoogleService-Info.plist */; };
+		EFDFA505221C3A0A00E00B11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		EF475A692216665A005BE788 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EF4CC7A3220DA2AF00D41FB8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		EFADEBAC221AA9AC00E223C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +158,7 @@
 				EF475A6D2217DFA9005BE788 /* Extenstion */,
 				EF475A6B2217DF63005BE788 /* Authentication */,
 				EF1B1F9321FC8CB900C4F8B3 /* RemoteConfigDefaults.plist */,
-				EFADEBAC221AA9AC00E223C2 /* GoogleService-Info.plist */,
+				EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */,
 				EF1DE96521EC13AC00AEF9ED /* AppDelegate.swift */,
 				EF4CC7A3220DA2AF00D41FB8 /* Model.swift */,
 				EF475A692216665A005BE788 /* PeopleViewController.swift */,
@@ -318,7 +318,7 @@
 			files = (
 				EF1DE97021EC13AE00AEF9ED /* LaunchScreen.storyboard in Resources */,
 				EF1B1F9421FC8CB900C4F8B3 /* RemoteConfigDefaults.plist in Resources */,
-				EFADEBAD221AA9AC00E223C2 /* GoogleService-Info.plist in Resources */,
+				EFDFA505221C3A0A00E00B11 /* GoogleService-Info.plist in Resources */,
 				EF1DE96D21EC13AE00AEF9ED /* Assets.xcassets in Resources */,
 				EF1DE96B21EC13AC00AEF9ED /* Main.storyboard in Resources */,
 			);
