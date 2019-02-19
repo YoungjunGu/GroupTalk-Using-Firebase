@@ -14,6 +14,7 @@ API Request를 위한 분리 작업 필요
 
 > 뷰의 회전을 감지하고 layout 설정
 
+뷰 회전 제어 하는 방법 : [View Rotation](https://github.com/gaki2745/Youngjun-iOS-Studio/tree/master/ViewRotation)
 
 > 친구 목록을 TableView에 불러오는 작업
 
