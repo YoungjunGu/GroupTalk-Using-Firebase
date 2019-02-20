@@ -24,7 +24,10 @@
 		EF2144D321FD34FD00859DB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2144D221FD34FD00859DB3 /* SignUpViewController.swift */; };
 		EF475A6A2216665A005BE788 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF475A692216665A005BE788 /* PeopleViewController.swift */; };
 		EF4CC7A2220D9D0800D41FB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */; };
-		EF4CC7A4220DA2AF00D41FB8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A3220DA2AF00D41FB8 /* Model.swift */; };
+		EF4CC7A4220DA2AF00D41FB8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A3220DA2AF00D41FB8 /* UserProfile.swift */; };
+		EF510EB4221D1E2A005F9725 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EB3221D1E2A005F9725 /* PeopleTableViewCell.swift */; };
+		EF510EB7221D389C005F9725 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EB6221D389C005F9725 /* Post.swift */; };
+		EF510EBA221D3A1B005F9725 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EB9221D3A1B005F9725 /* ImageService.swift */; };
 		EFDFA505221C3A0A00E00B11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +78,10 @@
 		EF2144D221FD34FD00859DB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EF475A692216665A005BE788 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		EF4CC7A3220DA2AF00D41FB8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EF4CC7A3220DA2AF00D41FB8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		EF510EB3221D1E2A005F9725 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		EF510EB6221D389C005F9725 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EF510EB9221D3A1B005F9725 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,13 +161,14 @@
 		EF1DE96421EC13AC00AEF9ED /* GroupTalk */ = {
 			isa = PBXGroup;
 			children = (
+				EF510EB8221D3A07005F9725 /* Service */,
+				EF510EB5221D388E005F9725 /* Model */,
 				EF475A6D2217DFA9005BE788 /* Extenstion */,
 				EF475A6B2217DF63005BE788 /* Authentication */,
 				EF1B1F9321FC8CB900C4F8B3 /* RemoteConfigDefaults.plist */,
 				EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */,
 				EF1DE96521EC13AC00AEF9ED /* AppDelegate.swift */,
-				EF4CC7A3220DA2AF00D41FB8 /* Model.swift */,
-				EF475A692216665A005BE788 /* PeopleViewController.swift */,
+				EF510EB2221D1E0A005F9725 /* PeopleTable */,
 				EF1DE96921EC13AC00AEF9ED /* Main.storyboard */,
 				EF1DE96C21EC13AE00AEF9ED /* Assets.xcassets */,
 				EF1DE96E21EC13AE00AEF9ED /* LaunchScreen.storyboard */,
@@ -206,6 +213,32 @@
 				EF1EF2A6220F259000AAE66A /* FuncExtension.swift */,
 			);
 			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		EF510EB2221D1E0A005F9725 /* PeopleTable */ = {
+			isa = PBXGroup;
+			children = (
+				EF475A692216665A005BE788 /* PeopleViewController.swift */,
+				EF510EB3221D1E2A005F9725 /* PeopleTableViewCell.swift */,
+			);
+			path = PeopleTable;
+			sourceTree = "<group>";
+		};
+		EF510EB5221D388E005F9725 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF4CC7A3220DA2AF00D41FB8 /* UserProfile.swift */,
+				EF510EB6221D389C005F9725 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF510EB8221D3A07005F9725 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EF510EB9221D3A1B005F9725 /* ImageService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,9 +465,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4CC7A4220DA2AF00D41FB8 /* Model.swift in Sources */,
+				EF510EB4221D1E2A005F9725 /* PeopleTableViewCell.swift in Sources */,
+				EF510EB7221D389C005F9725 /* Post.swift in Sources */,
+				EF4CC7A4220DA2AF00D41FB8 /* UserProfile.swift in Sources */,
 				EF2144D321FD34FD00859DB3 /* SignUpViewController.swift in Sources */,
 				EF1DE96821EC13AC00AEF9ED /* ViewController.swift in Sources */,
+				EF510EBA221D3A1B005F9725 /* ImageService.swift in Sources */,
 				EF1EF2A5220F1F7400AAE66A /* MenuViewController.swift in Sources */,
 				EF4CC7A2220D9D0800D41FB8 /* LoginViewController.swift in Sources */,
 				EF475A6A2216665A005BE788 /* PeopleViewController.swift in Sources */,

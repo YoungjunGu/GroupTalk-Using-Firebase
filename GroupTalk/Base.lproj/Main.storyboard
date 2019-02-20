@@ -82,7 +82,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tapSignInButton:" destination="aJu-R9-ods" eventType="touchUpInside" id="Rq1-Nq-lr9"/>
-                                    <segue destination="fWq-zR-fBY" kind="show" id="ZSR-SV-Hm0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adh-HO-Apv" customClass="RoundedWhiteButton" customModule="GroupTalk" customModuleProvider="target">
@@ -131,7 +130,7 @@
         <!--Chat-->
         <scene sceneID="QDp-wK-x2l">
             <objects>
-                <viewController id="Dqx-A9-Ybs" customClass="HomeViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dqx-A9-Ybs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RRr-pp-frQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -298,7 +297,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0o-Yo-I6G" customClass="RoundedWhiteButton" customModule="GroupTalk" customModuleProvider="target">
                                 <rect key="frame" x="57" y="700" width="300" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="gaB-bU-jQF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="gaB-bU-jQF"/>
                                     <constraint firstAttribute="height" constant="50" id="v2c-F9-dLA"/>
                                 </constraints>
                                 <state key="normal" title="Continue">
@@ -352,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCJ-RZ-uwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2214" y="315"/>
+            <point key="canvasLocation" x="3090" y="362"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7rK-70-hGz">
@@ -365,9 +364,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wZr-BX-ril" kind="relationship" relationship="viewControllers" id="auE-DM-zlv"/>
-                        <segue destination="Dqx-A9-Ybs" kind="relationship" relationship="viewControllers" id="Jd4-S5-R7L"/>
-                        <segue destination="lU8-Xe-uyb" kind="relationship" relationship="viewControllers" id="DfM-ud-ygy"/>
+                        <segue destination="wZr-BX-ril" kind="relationship" relationship="viewControllers" id="Z4S-vy-i2G"/>
+                        <segue destination="Dqx-A9-Ybs" kind="relationship" relationship="viewControllers" id="gFE-0j-GjZ"/>
+                        <segue destination="lU8-Xe-uyb" kind="relationship" relationship="viewControllers" id="ruj-yY-LKd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flm-WV-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -377,23 +376,39 @@
         <!--People-->
         <scene sceneID="a8r-QK-GEA">
             <objects>
-                <viewController id="wZr-BX-ril" customClass="PeopleViewController" sceneMemberID="viewController">
+                <viewController id="wZr-BX-ril" customClass="PeopleViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bxc-X5-uAT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="awO-ou-EvC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wZr-BX-ril" id="VlD-Nf-MOd"/>
+                                    <outlet property="delegate" destination="wZr-BX-ril" id="bf1-yZ-JjU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UM7-Y5-kCP" firstAttribute="bottom" secondItem="awO-ou-EvC" secondAttribute="bottom" id="1sr-fb-rMP"/>
+                            <constraint firstItem="UM7-Y5-kCP" firstAttribute="trailing" secondItem="awO-ou-EvC" secondAttribute="trailing" id="OFi-nY-CA3"/>
+                            <constraint firstItem="awO-ou-EvC" firstAttribute="leading" secondItem="UM7-Y5-kCP" secondAttribute="leading" id="Qvd-kX-RRi"/>
+                            <constraint firstItem="awO-ou-EvC" firstAttribute="top" secondItem="UM7-Y5-kCP" secondAttribute="top" id="w01-ES-oOB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UM7-Y5-kCP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="People" image="ic_people" selectedImage="ic_people" id="LjM-SB-JJ2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9o-8Z-k9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6058" y="-1082"/>
+            <point key="canvasLocation" x="6057.971014492754" y="-1082.1428571428571"/>
         </scene>
         <!--Account-->
         <scene sceneID="XnF-uW-9tv">
             <objects>
-                <viewController id="lU8-Xe-uyb" customClass="HomeViewController" customModule="GroupTalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lU8-Xe-uyb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vwG-GM-Wbz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var signInButton: RoundedWhiteButton!
@@ -20,10 +20,14 @@ class LoginViewController: UIViewController {
     var colorString: String! = nil
     
     @IBAction func tapSignInButton(_ sender: Any) {
-        handleSignIn()
+        
+        if self.checkUserInputInfo() != false {
+            handleSignIn()
+        }
     }
     
     @IBAction func tapCancelButton(_ sender: Any) {
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -32,7 +36,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         try! Auth.auth().signOut()
-
+        
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         setUpLayout()
         
@@ -50,7 +54,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-
+    
 }
 
 extension LoginViewController {
@@ -60,6 +64,22 @@ extension LoginViewController {
         let alert = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func checkUserInputInfo() -> Bool {
+        if self.emailTextField.text == "" {
+            self.showAlert(message: "이메일을 입력해 주세요.")
+            return false
+        }
+        else if self.pwdTextField.text == "" {
+            self.showAlert(message: "비밀번호를 입력해 주세요.")
+            return false
+        }
+        else {
+            return true
+        }
+        
     }
     
     
@@ -104,3 +124,6 @@ extension LoginViewController {
         }
     }
 }
+
+
+
