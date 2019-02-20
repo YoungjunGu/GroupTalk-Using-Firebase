@@ -11,7 +11,7 @@ import Firebase
 import SnapKit
 
 class PeopleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     
     
     var tableView: UITableView!
@@ -54,6 +54,7 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.reloadData()
         
+        beginBatchFetch()
     }
     
     func fetchPosts(completion: @escaping (_ posts: [Post]) -> ()) {
@@ -82,7 +83,7 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
                     
                     if childSnapshot.key != lastPost?.userId {
                         let userProfile = User(uid: uid, userName: username, photoURL: url)
-                        let post = Post(userId: childSnapshot.key, author: userProfile, timestamp:timestamp)
+                        let post = Post(userId: childSnapshot.key, author: userProfile, timestamp: timestamp)
                         tempPosts.insert(post, at: 0)
                     }
                     
@@ -93,15 +94,19 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PeopleTableViewCell
-            cell.setUserInfoConfig(post: posts[indexPath.row])
-            return cell
+        
+        let cell: PeopleTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! PeopleTableViewCell
+        cell.setUserInfoConfig(post: posts[indexPath.row])
+        return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

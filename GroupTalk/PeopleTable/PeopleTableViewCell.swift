@@ -9,24 +9,25 @@
 import UIKit
 
 class PeopleTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     weak var post: Post?
     
     func setUserInfoConfig(post: Post) {
+        print("config 진입")
         self.post = post
         
         self.profileImage.image = nil
@@ -39,7 +40,7 @@ class PeopleTableViewCell: UITableViewCell {
             }
         }
         
-        nameLabel.text = post.author.userName
+        userNameLabel.text = post.author.userName
     }
 
 }

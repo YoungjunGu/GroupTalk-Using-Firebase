@@ -115,7 +115,7 @@ extension SignUpViewController {
                                         self.setContinueButton(enable: false)
                                         self.continueButton.setTitle("", for: .normal)
                                         print("회원가입 성공")
-                                        self.dismiss(animated: true, completion: nil)
+                                        
                                     } else {
                                         self.showAlert(message: "회원 가입 실패1")
                                     }
@@ -210,6 +210,7 @@ extension SignUpViewController {
         databaseRef.setValue(userObject, withCompletionBlock: { (error, ref) in
             if error == nil {
                 print("Realtime Database 추가 성공")
+                self.dismiss(animated: true, completion: nil)
             }
         })
     }

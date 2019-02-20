@@ -25,9 +25,11 @@
 		EF475A6A2216665A005BE788 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF475A692216665A005BE788 /* PeopleViewController.swift */; };
 		EF4CC7A2220D9D0800D41FB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */; };
 		EF4CC7A4220DA2AF00D41FB8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4CC7A3220DA2AF00D41FB8 /* UserProfile.swift */; };
-		EF510EB4221D1E2A005F9725 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EB3221D1E2A005F9725 /* PeopleTableViewCell.swift */; };
 		EF510EB7221D389C005F9725 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EB6221D389C005F9725 /* Post.swift */; };
 		EF510EBA221D3A1B005F9725 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EB9221D3A1B005F9725 /* ImageService.swift */; };
+		EF510EBF221D9DFA005F9725 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EBD221D9DFA005F9725 /* PeopleTableViewCell.swift */; };
+		EF510EC0221D9DFA005F9725 /* PeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF510EBE221D9DFA005F9725 /* PeopleTableViewCell.xib */; };
+		EF510EC2221DA68E005F9725 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF510EC1221DA68E005F9725 /* UserService.swift */; };
 		EFDFA505221C3A0A00E00B11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -79,9 +81,11 @@
 		EF475A692216665A005BE788 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		EF4CC7A1220D9D0800D41FB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EF4CC7A3220DA2AF00D41FB8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		EF510EB3221D1E2A005F9725 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		EF510EB6221D389C005F9725 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EF510EB9221D3A1B005F9725 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		EF510EBD221D9DFA005F9725 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		EF510EBE221D9DFA005F9725 /* PeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleTableViewCell.xib; sourceTree = "<group>"; };
+		EF510EC1221DA68E005F9725 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		EFDFA504221C3A0A00E00B11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,7 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				EF475A692216665A005BE788 /* PeopleViewController.swift */,
-				EF510EB3221D1E2A005F9725 /* PeopleTableViewCell.swift */,
+				EF510EBD221D9DFA005F9725 /* PeopleTableViewCell.swift */,
+				EF510EBE221D9DFA005F9725 /* PeopleTableViewCell.xib */,
 			);
 			path = PeopleTable;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				EF510EB9221D3A1B005F9725 /* ImageService.swift */,
+				EF510EC1221DA68E005F9725 /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 			files = (
 				EF1DE97021EC13AE00AEF9ED /* LaunchScreen.storyboard in Resources */,
 				EF1B1F9421FC8CB900C4F8B3 /* RemoteConfigDefaults.plist in Resources */,
+				EF510EC0221D9DFA005F9725 /* PeopleTableViewCell.xib in Resources */,
 				EFDFA505221C3A0A00E00B11 /* GoogleService-Info.plist in Resources */,
 				EF1DE96D21EC13AE00AEF9ED /* Assets.xcassets in Resources */,
 				EF1DE96B21EC13AC00AEF9ED /* Main.storyboard in Resources */,
@@ -465,15 +472,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF510EB4221D1E2A005F9725 /* PeopleTableViewCell.swift in Sources */,
 				EF510EB7221D389C005F9725 /* Post.swift in Sources */,
 				EF4CC7A4220DA2AF00D41FB8 /* UserProfile.swift in Sources */,
 				EF2144D321FD34FD00859DB3 /* SignUpViewController.swift in Sources */,
 				EF1DE96821EC13AC00AEF9ED /* ViewController.swift in Sources */,
 				EF510EBA221D3A1B005F9725 /* ImageService.swift in Sources */,
 				EF1EF2A5220F1F7400AAE66A /* MenuViewController.swift in Sources */,
+				EF510EC2221DA68E005F9725 /* UserService.swift in Sources */,
 				EF4CC7A2220D9D0800D41FB8 /* LoginViewController.swift in Sources */,
 				EF475A6A2216665A005BE788 /* PeopleViewController.swift in Sources */,
+				EF510EBF221D9DFA005F9725 /* PeopleTableViewCell.swift in Sources */,
 				EF1DE96621EC13AC00AEF9ED /* AppDelegate.swift in Sources */,
 				EF1EF2A3220F1AA200AAE66A /* RoundedWhiteButton.swift in Sources */,
 				EF1EF2A7220F259000AAE66A /* FuncExtension.swift in Sources */,
